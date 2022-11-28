@@ -39,16 +39,16 @@ int main(int argc, char *argv[])
 
 	//	Initialize command line variables to some default values, should the user fail to provide...
 	//	This is for development purpose only, not to enter production code
-	year		= 2022;
-	month		= 12;
+	year		= 2020;
+	month		= 6;
 	day			= 21;
-	hour		= 13;
+	hour		= 10;
 	minute		= 0;
 	second		= 0;
-	timezone	= 1;
+	timezone	= 10;
 	dst			= 0;
-	lat			= 64.466;
-	lon			= 11.495;
+	lat			= -37.81998;
+	lon			= 144.983431;
 	
 
 

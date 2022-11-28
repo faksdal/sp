@@ -18,6 +18,8 @@
 
 void sunpos::spCalcGeomMeanLongSun(void)
 {
+	double T = jdnGetJdnJulianCentury();
+
 	//spGeomMeanLongSun = 280.46646 + jdnGetJdnJulianCentury() * (36000.76983  + 0.0003032 * jdnGetJdnJulianCentury());
-	spGeomMeanLongSun	= fmod(280.46646 + jdnGetJdnJulianCentury() * (36000.76983 + jdnGetJdnJulianCentury() * 0.0003032), 360.);
+	spGeomMeanLongSun	= fmod(280.46646 + T * (36000.76983 + T * 0.0003032), 360.);
 }

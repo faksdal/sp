@@ -38,8 +38,8 @@ void sunpos::spPrintOutput(void)
 	cout	<< "    Suns geometric mean longitude: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) <<  spGetGeomMeanLongSun() << endl;
 	cout	<< "      Suns geometric mean anomaly: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) <<  spGetGeomMeanAnomSun() << endl;
 	cout	<< "               spEccentEarthOrbit: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) <<  spGetEccentEarthOrbit() << endl;
+	cout	<< "                     spSunEqOfCtr: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) <<  spGetSunEqOfCtr() << endl;
 	/*
-	cout	<< "                 spSunEqOfCtr: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION) <<  spGetSunEqOfCtr() << endl;
 	cout	<< "                spSunTrueLong: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetSunTrueLong() << endl;
 	cout	<< "                spSunTrueAnom: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetSunTrueAnom() << endl;
 	cout	<< "               spSunRadVector: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetSunRadVector() << endl;

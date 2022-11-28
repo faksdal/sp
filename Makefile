@@ -8,16 +8,16 @@
 # Written by David Halter <davidhalter88@gmail.com>
 # -------------------------------------------------------
 CC=g++
-CFLAGS=-c -O2 -Wall -I. -I inc
-SRC_DIR = src/
-BUILD_DIR = obj/
+CFLAGS=-c -O2 -Wall -I. -I src
+SRC_DIR = src
+BUILD_DIR = obj
 LDFLAGS=
-SOURCES=$(wildcard $(SRC_DIR)*.cc $(SRC_DIR)*.c $(SRC_DIR)*.cpp)
+SOURCES=$(wildcard $(SRC_DIR)/*.cc $(SRC_DIR)/*.c $(SRC_DIR)/*.cpp)
 # oh, how I hate make files!
 HEADER_FILES_old1=$(patsubst %.cc, %.h, $(SOURCES))
 HEADER_FILES_old2=$(patsubst %.cpp, %.h, $(HEADER_FILES_old1))
 HEADER_FILES=$(patsubst %.c, %.h, $(HEADER_FILES_old2))
-OBJECTS=$(patsubst $(SRC_DIR)%.h,$(BUILD_DIR)%.o,$(HEADER_FILES))
+OBJECTS=$(patsubst $(SRC_DIR)/%.h,$(BUILD_DIR)/%.o,$(HEADER_FILES))
 EXECUTABLE=sp
 
 DEPENDENCIES=$(patsubst %.o, %.d, $(OBJECTS))
@@ -33,13 +33,13 @@ $(EXECUTABLE): $(OBJECTS)
 # MMD generate dependency files
 # The odd-looking 'sed' line makes the .d file itself 
 # depend on relevant source and headers
-$(BUILD_DIR)%.o: $(SRC_DIR)%.*
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.*
 	$(CC) -MMD -MP $(CFLAGS) $< -o $@
-	@sed -i -e '1s,\($*\)\.o[ :]*,\1.o $(BUILD_DIR)$*.d: ,' $(BUILD_DIR)$*.d
+	@sed -i -e '1s,\($*\)\.o[ :]*,\1.o $(BUILD_DIR)/$*.d: ,' $(BUILD_DIR)/$*.d
 
 # The include stops 'make' complaining if any .d files 
 # are not found (eg. on initial build).
 -include $(DEPENDENCIES)
 
 clean:
-	rm $(BUILD_DIR)*
+	rm $(BUILD_DIR)/*

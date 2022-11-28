@@ -17,5 +17,7 @@
 
 void sunpos::spCalcEccentEarthOrbit(void)
 {
-	spEccentEarthOrbit	= 0.016708634 - (jdnGetJdnJulianCentury() * 0.000042037) - (0.0000001267 * jdnGetJdnJulianCentury() * jdnGetJdnJulianCentury());
+	double T = jdnGetJdnJulianCentury();
+
+	spEccentEarthOrbit	= 0.016708634 - (T * 0.000042037) - (0.0000001267 * T * T);
 }

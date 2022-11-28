@@ -73,6 +73,7 @@ public:
 	double	jdnGetJdnJulianDay(void)			{ return jdnJulianDay; }
 	double	jdnGetJdnNoon(void)					{ return jdnJdnNoon; }
 	double	jdnGetJdnJulianCentury(void)		{ return jdnJulianCentury; }
+	//double	jdnGetJdnT(void)					{ return jdnT; }
 	double	jdnGetJdnJulianCenturyNoon(void)	{ return jdnJulianCenturyNoon; }
 	//***************************************************************************
 

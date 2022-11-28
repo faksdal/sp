@@ -12,7 +12,8 @@
 
 void sunpos::spCalcGeomMeanAnomSun(void)
 {
-	spGeomMeanAnomSun	= 357.52911 + jdnGetJdnJulianCentury() * (35999.05029 - 0.0001537 * jdnGetJdnJulianCentury());
+	double T = jdnGetJdnJulianCentury();
+	spGeomMeanAnomSun	= 357.52911 + T * (35999.05029 - 0.0001537 * T);
 	//spGeomMeanAnomSun	= fmod((357.52911 + jdnGetJdnJulianCentury() * (35999.05029 - 0.0001537 * jdnGetJdnJulianCentury())), 360.);
 }
 

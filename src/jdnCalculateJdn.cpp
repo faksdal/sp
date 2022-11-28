@@ -16,7 +16,7 @@
 
 void jdnMeeus1998::jdnCalculateJdn(void)
 {
-	int		A, B, M, Y;
+	int		/*A,*/ B, M, Y;
 
 		M = jdnMonth;
 		Y = jdnYear;
@@ -34,7 +34,7 @@ void jdnMeeus1998::jdnCalculateJdn(void)
 			if(jdnVerbose)
 				cout << "Perform Meeus calculations based on Julian date..." << endl;
 
-			A	=	floor(jdnYear/100);
+			//A	=	floor(jdnYear/100);
 			B	=	0;
 
 
