@@ -71,12 +71,10 @@ class sunpos : public jdnMeeus1998 {
 	double		spGeomMeanLongSun,
 				spGeomMeanAnomSun,
 				spEccentEarthOrbit,
-				spSunEqOfCtr;
-	/*
-
-
+				spSunEqOfCtr,
 				spSunTrueLong,
-				spSunTrueAnom,
+				spSunTrueAnom;
+	/*
 				spSunRadVector,
 				spSunAppLong,
 				spMeanObliqEcliptic,
@@ -110,11 +108,9 @@ class sunpos : public jdnMeeus1998 {
 	void	spCalcGeomMeanAnomSun(void);
 	void	spCalcEccentEarthOrbit(void);
 	void	spCalcSunEqOfCtr(void);
-	/*
-
-
 	void	spCalcSunTrueLong(void);
 	void	spCalcSunTrueAnom(void);
+	/*
 	void	spCalcSunRadVector(void);
 	void	spCalcSunAppLong(void);
 	void	spCalcMeanObliqEcliptic(void);
@@ -147,11 +143,12 @@ public:
 	double	spGetGeomMeanAnomSun(void)		{ return spGeomMeanAnomSun; }
 	double	spGetEccentEarthOrbit(void)		{ return spEccentEarthOrbit; }
 	double	spGetSunEqOfCtr(void)			{ return spSunEqOfCtr; }
+	double	spGetSunTrueLong(void)			{ return spSunTrueLong; }
+	double	spGetSunTrueAnom(void)			{ return spSunTrueAnom; }
 	/*
 	double	spGetspLat(void)				{ return spLat; }
 	double	spGetspLon(void)				{ return spLon; }
-	double	spGetSunTrueLong(void)			{ return spSunTrueLong; }
-	double	spGetSunTrueAnom(void)			{ return spSunTrueAnom; }
+
 	double	spGetSunRadVector(void)			{ return spSunRadVector; }
 	double	spGetSunAppLong(void)			{ return spSunAppLong; }
 	double	spGetMeanObliqEcliptic(void)	{ return spMeanObliqEcliptic; }

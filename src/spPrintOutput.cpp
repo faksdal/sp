@@ -39,9 +39,9 @@ void sunpos::spPrintOutput(void)
 	cout	<< "      Suns geometric mean anomaly: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) <<  spGetGeomMeanAnomSun() << endl;
 	cout	<< "               spEccentEarthOrbit: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) <<  spGetEccentEarthOrbit() << endl;
 	cout	<< "                     spSunEqOfCtr: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) <<  spGetSunEqOfCtr() << endl;
+	cout	<< "                    spSunTrueLong: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spGetSunTrueLong() << endl;
+	cout	<< "                    spSunTrueAnom: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spGetSunTrueAnom() << endl;
 	/*
-	cout	<< "                spSunTrueLong: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetSunTrueLong() << endl;
-	cout	<< "                spSunTrueAnom: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetSunTrueAnom() << endl;
 	cout	<< "               spSunRadVector: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetSunRadVector() << endl;
 	cout	<< "                 spSunAppLong: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetSunAppLong() << endl;
 	cout	<< "          spMeanObliqEcliptic: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetMeanObliqEcliptic() << endl;

@@ -34,6 +34,9 @@ sunpos::sunpos(int _year, short _month, short _day, short _hour, short _minute, 
 	spCalcGeomMeanAnomSun();
 	spCalcEccentEarthOrbit();
 	spCalcSunEqOfCtr();
+	spCalcSunTrueLong();
+	spCalcSunTrueAnom();
+
 
 	spFLOATWIDTH		= 25;
 	spFLOATPRECISION	= 15;
