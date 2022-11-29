@@ -5,7 +5,6 @@
  *      Author: jole
  *
  *      
- *	The Sun's equation of centre
  *
  */
 
@@ -14,7 +13,7 @@
 
 
 //
-//
+// TODO - describe what we're calculating here...
 //
 void sunpos::spCalcSunEqOfCtr(void)
 {

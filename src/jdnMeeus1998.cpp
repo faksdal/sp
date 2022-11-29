@@ -67,13 +67,6 @@ jdnMeeus1998::jdnMeeus1998(int year, short month, short day, short hour, short m
 
 
 jdnMeeus1998::~jdnMeeus1998() {
-	// TODO Auto-generated destructor stub
+	// Empty destructor
 }
 
-
-
-/*JulianDay::JulianDay(const JulianDay &other) {
-	// TODO Auto-generated constructor stub
-
-}
-*/

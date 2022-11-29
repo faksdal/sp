@@ -1,3 +1,13 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 16 Nov 2022
+ *      Author: jole
+ *
+ *      Driver file for classes jdnMeeus1998 and sp.
+ *
+ */
+
 using namespace std;
 
 #include <iostream>
@@ -23,10 +33,14 @@ int main(int argc, char *argv[])
 	//
 	int		c, optionIndex;
 	//float	input = 0L, output;
-	char	*shortOptions = (char*)"vjd";
+
+	//
+	//	TODO Add proper switches as the projects goes along
+	//
+	char	*shortOptions = (char*)"d:t:v";
 	struct option	longOptions[] = {
-					{"date",	required_argument,	NULL,	1},
-					{"time",	required_argument,	NULL,	2},
+					{"date",	required_argument,	NULL,	'd'},
+					{"time",	required_argument,	NULL,	't'},
 					{"tz",		required_argument,	NULL,	3},
 					{"lat",		required_argument,	NULL,	4},
 					{"lon",		required_argument,	NULL,	5},
@@ -38,7 +52,7 @@ int main(int argc, char *argv[])
 	};	//End of getopt()-variables
 
 	//	Initialize command line variables to some default values, should the user fail to provide...
-	//	This is for development purpose only, not to enter production code
+	//	This is for development purpose only, not to enter production code.
 	year		= 2020;
 	month		= 6;
 	day			= 21;
@@ -52,10 +66,10 @@ int main(int argc, char *argv[])
 	
 
 
-	/*getopt switch statement*/
+	//	getopt switch statement
 	while((c = getopt_long(argc, argv, shortOptions, longOptions, &optionIndex)) != -1){
 			switch(c){
-				case 1:		{
+				case 'd':	{
 								year = atoi(optarg);
 								parseOptarg(&optarg);
 								month = atoi(optarg);
@@ -65,7 +79,7 @@ int main(int argc, char *argv[])
 
 								break;
 							}
-				case 2:		{
+				case 't':	{
 								hour = atoi(optarg);
 								parseOptarg(&optarg);
 								minute = atoi(optarg);
@@ -109,16 +123,20 @@ int main(int argc, char *argv[])
 	
 
 
-	// allocate memory for a sunpos-instance
+	// Try to allocate memory for an instance of class sunpos
 	sunpos *sp = new sunpos(year, month, day, hour, minute, second, timezone, lat, lon, dst, verbose);
 
 	//	handle any error that might occur
 	if(!sp){
 		cout << "Allocation failed: " << "memory Error" << '\n';
+		exit(-1);
 	}
 
 
 
+	//
+	//	Print something if the user sets the verbose switch
+	//
 	if(verbose){
 		sp->spPrintOutput();
 	}

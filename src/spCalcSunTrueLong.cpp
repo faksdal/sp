@@ -10,7 +10,7 @@
 
 
 //
-//
+//	TODO - describe what we're calculating here...
 //
 void sunpos::spCalcSunTrueLong(void)
 {

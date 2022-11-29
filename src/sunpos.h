@@ -45,7 +45,7 @@
  *
  *
  *	****************************************************************************************************
- *	The class is provided as-is without any warranty of any kind. Feel free to modify to your own needs!
+ *	The file is provided as-is without any warranty of any kind. Feel free to modify to your own needs!
  *	****************************************************************************************************
  */
 

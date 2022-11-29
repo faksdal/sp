@@ -10,6 +10,9 @@
 
 
 
+//
+//	TODO - describe what we're calculating here...
+//
 void sunpos::spCalcGeomMeanAnomSun(void)
 {
 	double T = jdnGetJdnJulianCentury();

@@ -16,6 +16,9 @@
 
 
 
+//
+//	TODO - describe what we're calculating here...
+//
 void sunpos::spCalcGeomMeanLongSun(void)
 {
 	double T = jdnGetJdnJulianCentury();

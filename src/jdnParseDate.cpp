@@ -4,31 +4,31 @@
  *	Created on: 20 Nov 2022
  *	Author: jole
  *
- *	Saved function jdnParseDate in its own file
  *
  *	This function takes care of checking the user inputs a valid date, and also that we use the
- *	correct algorithm whether we're in Julian or Gregorian calendar.
+ *	correct algorithm whether we're using the Julian or Gregorian calendar.
  *      
  *
  */
 
-#include <stdio.h>
+#include <iostream>
 #include "jdnMeeus1998.h"
+
+using namespace std;
 
 
 
 void jdnMeeus1998::jdnParseDate(void)
 {
-	// we assume a valid Gregorian date, otherwise this is changed in the below switch{...}/if{...}-statement
+	//
+	//	We assume a valid Gregorian date, otherwise this is changed in the below switch{...}/if{...}-statements
+	//
 	jdnValidDate		= true;
 	jdnGregorianDate	= true;
 
-
-
-
-
 	//
-	//	If we're in 1582, check for valid date
+	//	If we're in 1582, check for valid date. There are ten missing dates this year as we went from
+	//	using the Julian to the Gregorian calendar.
 	//
 	if(jdnYear == 1582 && jdnMonth == 10){
 		switch(jdnDay){
@@ -46,7 +46,7 @@ void jdnMeeus1998::jdnParseDate(void)
 		case 11:
 		case 12:
 		case 13:
-		case 14:	printf("\n No such date!\n Exiting...\n");
+		case 14:	cout << endl << "No such date!\n Exiting..." << endl;
 					jdnValidDate = false;
 					exit(-1);
 					break;
@@ -55,10 +55,10 @@ void jdnMeeus1998::jdnParseDate(void)
 	}
 	else if(jdnYear == 1582 && jdnMonth < 10){
 		jdnGregorianDate = false;
-		//printf("\nYear == 1582 and month is less than 10.\n");
+		//cout << endl << "Year == 1582 and month is less than 10." << endl;
 	}
 	else if(jdnYear < 1582){
 		jdnGregorianDate = false;
-		//printf("\nYear is less than 1582.\n");
+		//cout << endl << "Year is less than 1582." << endl;
 	}
 }
