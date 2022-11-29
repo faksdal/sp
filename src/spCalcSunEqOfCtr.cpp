@@ -5,6 +5,7 @@
  *      Author: jole
  *
  *      
+ *	The Sun's equation of centre
  *
  */
 
