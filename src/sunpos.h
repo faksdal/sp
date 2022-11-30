@@ -73,10 +73,11 @@ class sunpos : public jdnMeeus1998 {
 				spEccentEarthOrbit,
 				spSunEqOfCtr,
 				spSunTrueLong,
-				spSunTrueAnom;
-	/*
+				spSunTrueAnom,
 				spSunRadVector,
-				spSunAppLong,
+				spSunAppLong;
+	/*
+				,
 				spMeanObliqEcliptic,
 				spObliqCorr,
 				spSunRtAscen,
@@ -110,9 +111,9 @@ class sunpos : public jdnMeeus1998 {
 	void	spCalcSunEqOfCtr(void);
 	void	spCalcSunTrueLong(void);
 	void	spCalcSunTrueAnom(void);
-	/*
 	void	spCalcSunRadVector(void);
 	void	spCalcSunAppLong(void);
+	/*
 	void	spCalcMeanObliqEcliptic(void);
 	void	spCalcObliqCorr(void);
 	void	spCalcSunRtAscen(void);
@@ -145,6 +146,7 @@ public:
 	double	spGetSunEqOfCtr(void)			{ return spSunEqOfCtr; }
 	double	spGetSunTrueLong(void)			{ return spSunTrueLong; }
 	double	spGetSunTrueAnom(void)			{ return spSunTrueAnom; }
+	double	spGetSunRadVector(void)			{ return spSunRadVector; }
 	/*
 	double	spGetspLat(void)				{ return spLat; }
 	double	spGetspLon(void)				{ return spLon; }

@@ -14,11 +14,8 @@
 //
 void sunpos::spCalcSunTrueAnom(void)
 {
-	//double T	=	jdnGetJdnJulianCentury();
-	//double M	=	spGetGeomMeanAnomSun();
-
-
-	spSunTrueAnom	=	990;
+	//spSunTrueAnom		= fmod((spGeomMeanAnomSun + spSunEqOfCtr), 360);
+	spSunTrueAnom		= (spGeomMeanAnomSun + spSunEqOfCtr);
 }
 
 

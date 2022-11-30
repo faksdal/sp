@@ -10,14 +10,12 @@
 
 
 //
-//	TODO - describe what we're calculating here...
+//	The Sun's true longitude is equal to the geometric mean longitude of the Sun (L0) + the Sun's equation of center (C).
 //
 void sunpos::spCalcSunTrueLong(void)
 {
-	//double T	=	jdnGetJdnJulianCentury();
-	//double M	=	spGetGeomMeanAnomSun();
-
-	spSunTrueLong	=	990;
+	//spSunTrueLong	=	spGetGeomMeanLongSun() + spGetSunEqOfCtr();
+	spSunTrueLong		= spGeomMeanLongSun + spSunEqOfCtr;
 }
 
 
