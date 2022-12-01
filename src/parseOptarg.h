@@ -5,12 +5,12 @@
  *	Author: jole
  */
 
-#ifndef SRC_PARSEOPTARG_H_
-#define SRC_PARSEOPTARG_H_
+#ifndef __parseOptarg_h__
+#define __parseOptarg_h__
 
 #include <iostream>
 
 void parseOptarg(char **_optarg);
 
 
-#endif /* SRC_PARSEOPTARG_H_ */
+#endif	//	__parseOptarg_h__

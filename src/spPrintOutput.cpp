@@ -12,7 +12,8 @@ void sunpos::spPrintOutput(void)
 	//cout << endl;
 	cout	<< "Date/time: " << jdnGetJdnDay() << "/" <<  jdnGetJdnMonth() << "/" << jdnGetJdnYear() << " @ " << setw(2) << setfill('0') << jdnGetJdnHour() <<":" << setw(2) << setfill('0')<< jdnGetJdnMinute() << ":" << setw(2) << setfill('0')<< jdnGetJdnSecond() << endl;
 	//cout	<< "Timezone: " << jdnGetJdnTz() << endl;
-	cout	<< "  Lat/Lon: " << setw(12) << setprecision(8) << spGetSpLat() << "°/" << setw(12) << setprecision(8) << spGetSpLon() << "°" << endl;
+	//	TODO Correct the precision formatters for Lat/Lon print
+	cout	<< "  Lat/Lon: " << setw(12) << setprecision(8) << spLat << "°/" << setw(12) << setprecision(8) << spLon << "°" << endl;
 	//cout << endl;
 
 

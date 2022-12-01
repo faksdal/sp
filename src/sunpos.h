@@ -88,12 +88,7 @@ class sunpos : public jdnMeeus1998 {
 				spLocalSunSet,
 				spLat,
 				spLon;
-	/*
-				,
-				,
-				,
 
-	*/
 
 
 	//
@@ -102,6 +97,7 @@ class sunpos : public jdnMeeus1998 {
 	double		RADIANS(double degrees) {return (degrees * M_PI / 180);}
 	double		DEGREES(double radians) {return (radians * 180 / M_PI);}
 	//***********************************************************************************
+
 
 
 	//
@@ -126,7 +122,6 @@ class sunpos : public jdnMeeus1998 {
 	void	spCalcLocalSolarNoon(void);
 	void	spCalcLocalSunRise(void);
 	void	spCalcLocalSunSet(void);
-
 	//****************************************************************
 
 
@@ -134,14 +129,13 @@ public:
 	//
 	//	Constructor and destructor
 	//
-	sunpos(int _year, short _month, short _day, short _hour, short _minute, short _second, short _tz, double _lat, double _lon, int _dst, bool _verbose);
-
-	virtual ~sunpos();
+				sunpos(int _year, short _month, short _day, short _hour, short _minute, short _second, short _tz, double _lat, double _lon, int _dst, bool _verbose);
+	virtual 	~sunpos();
 
 	//
-	//	Inline functions to retrieve data member values
+	//	Not needed at the moment! Inline functions to retrieve data member values
 	//
-
+	/*
 	double	spGetGeomMeanLongSun(void)		{ return spGeomMeanLongSun; }
 	double	spGetGeomMeanAnomSun(void)		{ return spGeomMeanAnomSun; }
 	double	spGetEccentEarthOrbit(void)		{ return spEccentEarthOrbit; }
@@ -149,11 +143,8 @@ public:
 	double	spGetSunTrueLong(void)			{ return spSunTrueLong; }
 	double	spGetSunTrueAnom(void)			{ return spSunTrueAnom; }
 	double	spGetSunRadVector(void)			{ return spSunRadVector; }
-
 	double	spGetSpLat(void)				{ return spLat; }
 	double	spGetSpLon(void)				{ return spLon; }
-	/*
-
 	double	spGetSunAppLong(void)			{ return spSunAppLong; }
 	double	spGetMeanObliqEcliptic(void)	{ return spMeanObliqEcliptic; }
 	double	spGetObliqCorr(void)			{ return spObliqCorr; }
@@ -169,7 +160,7 @@ public:
 
 
 	//
-	//	Print to stdout (terminal)
+	//	Function to print calculated date to stdout (terminal)
 	//
 	void spPrintOutput(void);
 
@@ -178,25 +169,7 @@ public:
 	//
 	char*	timeStringFromDecimal(double time);
 
-	/*
 
+};	//	class sunpos
 
-
-	int		gettz(void) { return tz;}
-
-	char*	timeStringFromDecimal(double time);
-
-	double	getJulianDay(void) {return jd;}
-	double	getJulianCentury(void) {return jc;}
-
-
-
-
-
-
-
-	*/
-
-};	// class sunpos
-
-#endif /* __sunpos_h__ */
+#endif	//	__sunpos_h__

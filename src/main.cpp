@@ -6,6 +6,8 @@
  *
  *      Driver file for classes jdnMeeus1998 and sp.
  *
+ *      This file is used to test class jdnMeeus1998{} and class sp{}.
+ *
  */
 
 using namespace std;
@@ -16,6 +18,7 @@ using namespace std;
 #include <locale.h>
 
 #include "sunpos.h"
+#include "printUsage.h"
 #include "parseOptarg.h"
 #include "jdnMeeus1998.h"
 
@@ -37,7 +40,7 @@ int main(int argc, char *argv[])
 	//
 	//	TODO Add proper switches as the projects goes along
 	//
-	char	*shortOptions = (char*)"d:t:v";
+	char	*shortOptions = (char*)"d:t:vh";
 	struct option	longOptions[] = {
 					{"date",	required_argument,	NULL,	'd'},
 					{"time",	required_argument,	NULL,	't'},
@@ -46,7 +49,7 @@ int main(int argc, char *argv[])
 					{"lon",		required_argument,	NULL,	5},
 					{"dst",		required_argument,	NULL,	6},
 					{"verbose",	no_argument,		NULL, 'v'},
-					//{"jdn",		no_argument,		NULL,	'j'},
+					{"help",	no_argument,		NULL,	'h'},
 					//{"dow",		no_argument,		NULL,	'd'},
 					{0, 0, 0, 0}
 	};	//End of getopt()-variables
@@ -68,6 +71,8 @@ int main(int argc, char *argv[])
 
 	//
 	//	getopt() switch statement
+	//
+	//	Implement a proper help-screen for the user
 	//
 	while((c = getopt_long(argc, argv, shortOptions, longOptions, &optionIndex)) != -1){
 			switch(c){
@@ -115,6 +120,10 @@ int main(int argc, char *argv[])
 								verbose = true;
 
 								break;
+							}
+				case 'h':	{
+								printUsage();
+								exit(1);
 							}
 				default:	{
 								printf("switch default\n");

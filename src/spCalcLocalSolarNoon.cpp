@@ -9,7 +9,9 @@
 
 
 //
-// TODO - describe what we're calculating here...
+//	TODO -	Replace the algorithms to calculate sunrise and sunset correctly.
+//	TODO	To do that, I need to calculate these values based on the Julian Day Number at noon
+//	TODO	I have made a specific data member to hold that value in particular, but need to read up on my astronomy...
 //
 void sunpos::spCalcLocalSolarNoon(void)
 {
