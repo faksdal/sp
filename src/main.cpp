@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 					{0, 0, 0, 0}
 	};	//End of getopt()-variables
 
-	//	Initialize command line variables to some default values, should the user fail to provide...
+	//	Initialise command line variables to some default values, should the user fail to provide...
 	//	This is for development purpose only, not to enter production code.
 	year		= 2020;
 	month		= 6;
@@ -66,7 +66,9 @@ int main(int argc, char *argv[])
 	
 
 
-	//	getopt switch statement
+	//
+	//	getopt() switch statement
+	//
 	while((c = getopt_long(argc, argv, shortOptions, longOptions, &optionIndex)) != -1){
 			switch(c){
 				case 'd':	{
@@ -118,7 +120,7 @@ int main(int argc, char *argv[])
 								printf("switch default\n");
 								break;
 							}
-			}	//end of getopt switch statement
+			}	//end of getopt() switch statement
 		}	// end of while-loop
 	
 

@@ -12,7 +12,7 @@ void sunpos::spPrintOutput(void)
 	//cout << endl;
 	cout	<< "Date/time: " << jdnGetJdnDay() << "/" <<  jdnGetJdnMonth() << "/" << jdnGetJdnYear() << " @ " << setw(2) << setfill('0') << jdnGetJdnHour() <<":" << setw(2) << setfill('0')<< jdnGetJdnMinute() << ":" << setw(2) << setfill('0')<< jdnGetJdnSecond() << endl;
 	//cout	<< "Timezone: " << jdnGetJdnTz() << endl;
-	//cout	<< "Lat/Lon: " << setw(12) << setprecision(8) << spGetspLat() << "°/" << setw(12) << setprecision(8) << spGetspLon() << "°" << endl;
+	cout	<< "  Lat/Lon: " << setw(12) << setprecision(8) << spGetSpLat() << "°/" << setw(12) << setprecision(8) << spGetSpLon() << "°" << endl;
 	//cout << endl;
 
 
@@ -33,6 +33,7 @@ void sunpos::spPrintOutput(void)
 	cout	<< "               Julian Century: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) << jdnGetJdnJulianCentury() << endl;
 	cout	<< "       Julian Century at noon: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) << jdnGetJdnJulianCenturyNoon() << endl;
 
+
 	cout	<< endl << "Earth/Solar coordinates:" << endl;
 
 	cout	<< "    Suns geometric mean longitude: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION) <<  spGeomMeanLongSun << endl;
@@ -43,27 +44,27 @@ void sunpos::spPrintOutput(void)
 	cout	<< "                    spSunTrueAnom: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spSunTrueAnom << endl;
 	cout	<< "                   spSunRadVector: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spSunRadVector << endl;
 	cout	<< "                     spSunAppLong: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spSunAppLong << endl;
-	/*
-	cout	<< "          spMeanObliqEcliptic: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spMeanObliqEcliptic << endl;
-	cout	<< "                  spOliqCorr: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spObliqCorr << endl;
-	cout	<< "                 spSunRtAscen: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spSunRtAscen << endl;
-	cout	<< "                  spSunDeclin: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spSunDeclin << endl;
-	cout	<< "                       spVarY: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spVarY << endl;
-	cout	<< "                   spEqOfTime: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spEqOfTime << endl;
-	cout	<< "                  spHaSunrise: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spHaSunrise << endl;
-	cout	<< "   spLocalSolarNoon (decimal): " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spLocalSolarNoon << endl;
-	cout	<< "     spLocalSolarNoon (h:m:s): " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << timeStringFromDecimal(spGetLocalSolarNoon()) << endl;
+	cout	<< "              spMeanObliqEcliptic: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spMeanObliqEcliptic << endl;
+	cout	<< "                      spObliqCorr: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spObliqCorr << endl;
 
-	if(spGetHaSunrise() != -1){
-		cout	<< "                 localSunRise: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetLocalSunRise() << endl;
-		cout	<< "         localSunRise (h:m:s): " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << timeStringFromDecimal(spGetLocalSunRise()) << endl;
-		cout	<< "                  localSunSet: " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << spGetLocalSunSet() << endl;
-		cout	<< "          localSunSet (h:m:s): " << setw(FLOATWIDTH) << setprecision(FLOATPRECISION)  << timeStringFromDecimal(spGetLocalSunSet()) << endl;
+	cout	<< "                     spSunRtAscen: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spSunRtAscen << endl;
+	cout	<< "                      spSunDeclin: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spSunDeclin << endl;
+	cout	<< "                           spVarY: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spVarY << endl;
+	cout	<< "                       spEqOfTime: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spEqOfTime << endl;
+	cout	<< "                      spHaSunrise: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spHaSunrise << endl;
+	cout	<< "       spLocalSolarNoon (decimal): " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spLocalSolarNoon << endl;
+	cout	<< "      spLocalSolarNoon (hh:mm:ss): " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << timeStringFromDecimal(spLocalSolarNoon) << endl;
+
+	if(spHaSunrise != -1){
+		cout	<< "                     localSunRise: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spLocalSunRise << endl;
+		cout	<< "          localSunRise (hh:mm:ss): " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << timeStringFromDecimal(spLocalSunRise) << endl;
+		cout	<< "                      localSunSet: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spLocalSunSet << endl;
+		cout	<< "           localSunSet (hh:mm:ss): " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << timeStringFromDecimal(spLocalSunSet) << endl;
 	}
 	else{
 		cout << "     Sun below horizon\n";
 	}
-	*/
+
 	cout << endl;
 
 	return;

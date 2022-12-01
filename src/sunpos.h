@@ -75,9 +75,7 @@ class sunpos : public jdnMeeus1998 {
 				spSunTrueLong,
 				spSunTrueAnom,
 				spSunRadVector,
-				spSunAppLong;
-	/*
-				,
+				spSunAppLong,
 				spMeanObliqEcliptic,
 				spObliqCorr,
 				spSunRtAscen,
@@ -90,6 +88,11 @@ class sunpos : public jdnMeeus1998 {
 				spLocalSunSet,
 				spLat,
 				spLon;
+	/*
+				,
+				,
+				,
+
 	*/
 
 
@@ -113,7 +116,6 @@ class sunpos : public jdnMeeus1998 {
 	void	spCalcSunTrueAnom(void);
 	void	spCalcSunRadVector(void);
 	void	spCalcSunAppLong(void);
-	/*
 	void	spCalcMeanObliqEcliptic(void);
 	void	spCalcObliqCorr(void);
 	void	spCalcSunRtAscen(void);
@@ -124,7 +126,7 @@ class sunpos : public jdnMeeus1998 {
 	void	spCalcLocalSolarNoon(void);
 	void	spCalcLocalSunRise(void);
 	void	spCalcLocalSunSet(void);
-	*/
+
 	//****************************************************************
 
 
@@ -147,11 +149,11 @@ public:
 	double	spGetSunTrueLong(void)			{ return spSunTrueLong; }
 	double	spGetSunTrueAnom(void)			{ return spSunTrueAnom; }
 	double	spGetSunRadVector(void)			{ return spSunRadVector; }
-	/*
-	double	spGetspLat(void)				{ return spLat; }
-	double	spGetspLon(void)				{ return spLon; }
 
-	double	spGetSunRadVector(void)			{ return spSunRadVector; }
+	double	spGetSpLat(void)				{ return spLat; }
+	double	spGetSpLon(void)				{ return spLon; }
+	/*
+
 	double	spGetSunAppLong(void)			{ return spSunAppLong; }
 	double	spGetMeanObliqEcliptic(void)	{ return spMeanObliqEcliptic; }
 	double	spGetObliqCorr(void)			{ return spObliqCorr; }
@@ -174,7 +176,7 @@ public:
 	//
 	//	Formatting fraction of a day into hh:mm:ss
 	//
-	//char*	timeStringFromDecimal(double time);
+	char*	timeStringFromDecimal(double time);
 
 	/*
 

@@ -49,6 +49,7 @@ class jdnMeeus1998 {
 	bool	jdnGregorianDate, jdnValidDate, jdnVerbose;
 	short	jdnDay, jdnMonth, jdnHour, jdnMinute, jdnSecond, jdnTz, jdnFLOATWIDTH, jdnFLOATPRECISION;
 	int		jdnYear;
+	double	jdnJ2000;
 
 	double	jdnJulianDay, jdnJulianCentury, jdnJdnNoon, jdnJulianCenturyNoon;
 

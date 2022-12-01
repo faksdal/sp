@@ -71,10 +71,10 @@ void jdnMeeus1998::jdnCalculateJdn(void)
 		jdnJulianDay += (((jdnHour - jdnTz) + (jdnMinute / 60.) + (jdnSecond / 3600.) ) / 24.);
 
 		//
-		// calculating Julian Century according to p.163 in Jean Meeus Astronomical Algorithms Second Edition published in 1998.
+		// Calculating Julian Century according to p.163 in Jean Meeus Astronomical Algorithms Second Edition published in 1998.
 		//
-		jdnJulianCentury		= ((jdnJulianDay - 2451545.) / 36525.);
-		jdnJulianCenturyNoon	= ((jdnJdnNoon - 2451545.) / 36525.);
+		jdnJulianCentury		= ((jdnJulianDay - jdnJ2000) / 36525.);
+		jdnJulianCenturyNoon	= ((jdnJdnNoon - jdnJ2000) / 36525.);
 
 
 		return;

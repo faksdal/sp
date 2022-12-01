@@ -47,6 +47,8 @@ jdnMeeus1998::jdnMeeus1998(int year, short month, short day, short hour, short m
 
 	jdnTz		= tz;
 
+	jdnJ2000	= 2451545.;
+
 	//
 	// These are to be calculated, so we'll initialise them to NIL
 	//
