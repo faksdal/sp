@@ -1,5 +1,5 @@
 # sp
-SP is a small terminal utility which calculates the Sun's position based on the user input.
+SP is a small command line utility which calculates the Sun's position based on the user input.
 
 The user can specify:
     Date
