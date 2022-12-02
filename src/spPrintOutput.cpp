@@ -57,13 +57,13 @@ void sunpos::spPrintOutput(void)
 	cout	<< "      spLocalSolarNoon (hh:mm:ss): " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << timeStringFromDecimal(spLocalSolarNoon) << endl;
 
 	if(spHaSunrise != -1){
-		cout	<< "                     localSunRise: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spLocalSunRise << endl;
+		//cout	<< "                     localSunRise: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spLocalSunRise << endl;
 		cout	<< "          localSunRise (hh:mm:ss): " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << timeStringFromDecimal(spLocalSunRise) << endl;
-		cout	<< "                      localSunSet: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spLocalSunSet << endl;
+		//cout	<< "                      localSunSet: " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << spLocalSunSet << endl;
 		cout	<< "           localSunSet (hh:mm:ss): " << setw(spFLOATWIDTH) << setprecision(spFLOATPRECISION)  << timeStringFromDecimal(spLocalSunSet) << endl;
 	}
 	else{
-		cout << "     Sun below horizon\n";
+		cout << "     Sun above or below horizon\n";
 	}
 
 	cout << endl;

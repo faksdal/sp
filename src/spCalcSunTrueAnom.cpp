@@ -14,8 +14,8 @@
 //
 void sunpos::spCalcSunTrueAnom(void)
 {
-	//spSunTrueAnom		= fmod((spGeomMeanAnomSun + spSunEqOfCtr), 360);
-	spSunTrueAnom		= (spGeomMeanAnomSun + spSunEqOfCtr);
+	spSunTrueAnom		= fmod((spGeomMeanAnomSun + spSunEqOfCtr), 360);
+	//spSunTrueAnom		= (spGeomMeanAnomSun + spSunEqOfCtr);
 }
 
 
