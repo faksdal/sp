@@ -46,25 +46,8 @@ sunpos::sunpos(int _year,
 	//
 	//	Run all calculations
 	//
-	spCalcGeomMeanLongSun();
-	spCalcGeomMeanAnomSun();
-	spCalcEccentEarthOrbit();
-	spCalcSunEqOfCtr();
-	spCalcSunTrueLong();
-	spCalcSunTrueAnom();
-	spCalcSunRadVector();
-	spCalcSunAppLong();
-	spCalcMeanObliqEcliptic();
-	spCalcObliqCorr();
-	spCalcSunRtAscen();
-	spCalcSunDeclin();
-	spCalcVarY();
-	spCalcEqOfTime();
-	spCalcHaSunrise();
-	spCalcLocalSolarNoon();
-	spCalcLocalSunRise();
-	spCalcLocalSunSet();
-	//******************************************************
+	runCalculations();
+	//**********************
 
 	spFLOATWIDTH		= 25;
 	spFLOATPRECISION	= 15;
