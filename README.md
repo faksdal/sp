@@ -8,4 +8,4 @@ The user can specify:
     Timezone
     Daylight Savings Time
 
-and get a calculated position printed on the screen.
+and get a calculated position of the Sun printed on the screen.

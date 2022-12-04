@@ -46,7 +46,7 @@ sunpos::sunpos(int _year,
 	//
 	//	Run all calculations
 	//
-	runCalculations();
+	spRunCalculations();
 	//**********************
 
 	spFLOATWIDTH		= 25;

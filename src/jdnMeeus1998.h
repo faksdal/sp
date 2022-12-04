@@ -78,6 +78,9 @@ public:
 	double	jdnGetJdnJulianCenturyNoon(void)	{ return jdnJulianCenturyNoon; }
 	//***************************************************************************
 
+	void	jdnSetJdnJulianCentury(double _jdnJulianCentury) {jdnJulianCentury = _jdnJulianCentury;}
+	void	jdnSetJdnJulianCenturyNoon(double _jdnJulianCenturyNoon){jdnJulianCenturyNoon =_jdnJulianCenturyNoon;}
+
 	//
 	//	print-to-screen routines
 	//
