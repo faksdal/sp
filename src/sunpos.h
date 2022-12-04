@@ -98,7 +98,7 @@ class sunpos : public jdnMeeus1998 {
 	double		DEGREES(double radians) {return (radians * 180 / M_PI);}
 	//***********************************************************************************
 
-
+	void		runCalculations(void);
 
 	//
 	//	Functions to calculate the different elements in the object.

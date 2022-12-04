@@ -61,8 +61,9 @@ public:
 	jdnMeeus1998(int year, short month, short day, short hour, short minute, short second, short tz, bool verbose);
 	virtual ~jdnMeeus1998();
 
+
 	//
-	// inline public functions to return class-data-member-values
+	// inline public functions providing data member values
 	//
 	int		jdnGetJdnYear(void)					{ return jdnYear; }
 	short	jdnGetJdnMonth(void)				{ return jdnMonth; }
@@ -74,7 +75,6 @@ public:
 	double	jdnGetJdnJulianDay(void)			{ return jdnJulianDay; }
 	double	jdnGetJdnNoon(void)					{ return jdnJdnNoon; }
 	double	jdnGetJdnJulianCentury(void)		{ return jdnJulianCentury; }
-	//double	jdnGetJdnT(void)					{ return jdnT; }
 	double	jdnGetJdnJulianCenturyNoon(void)	{ return jdnJulianCenturyNoon; }
 	//***************************************************************************
 
