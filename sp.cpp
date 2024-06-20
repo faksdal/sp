@@ -23,7 +23,7 @@
 
 
 //#include "timestamp.h"
-#include "julianday.h"
+#include "sunpos.h"
 
 
 void parseOptarg(char **_optarg);
@@ -47,9 +47,9 @@ int main(int argc, char *argv[])
 	float	day;
 	float	second;
 
-	bool	dateSupplied = false;
-	bool	timeSupplied = false;
-	bool	verbose = false;
+	bool	dateSupplied	= false;
+	bool	timeSupplied	= false;
+	bool	verbose			= false;
 
 	//
 	//	getopt variables
@@ -133,14 +133,14 @@ int main(int argc, char *argv[])
 	dateSupplied ? printDate(year, month, day)		: getSystemDate(year, month, day, verbose);
 	timeSupplied ? printTime(hour, minute, second)	: getSystemTime(hour, minute, second, verbose);
 
-	//timestamp *ts = new timestamp(year, month, day, hour, minute, second, verbose);
 
-	julianday *jd = new julianday(year, month, day, hour, minute, second, tz, verbose);
+	sunpos * sp = new sunpos(year, month, day, hour, minute, second, tz, verbose, "Earth");
 
-	//jd->jd_printToScreen();
+	sp->sp_printToScreen();
 
-	if(jd)
-		delete jd;
+
+	if(sp)
+		delete sp;
 
 	return 0;
 }	//	int main(int argc, char *argv[])

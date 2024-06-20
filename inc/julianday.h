@@ -24,14 +24,12 @@ https://www.aa.quae.nl/en/reken/juliaansedag.html
 #ifndef INC_JULIANDAY_H_
 #define INC_JULIANDAY_H_
 
+#include <math.h>
 #include <string>
 #include <iostream>
 #include <inttypes.h>
 
 #include "timestamp.h"
-#include "meananomaly.h"
-#include "equationofcentre.h"
-
 
 
 
@@ -39,6 +37,7 @@ class julianday : public timestamp{
 
 private:
 
+	/*
 	struct Π_ω_table{
 		std::string	planet;
 		double		Π,ω;
@@ -55,11 +54,11 @@ private:
 											"Pluto",		184.5484,	119.6075 };
 	double Π_Earth;
 	double ε_Earth;
+	*/
 
 	std::string	dow_name[7] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
 
-	//	Precision formatters for terminal printing
-	short			jd_FLOATWIDTH, jd_FLOATPRECISION;
+
 
 	short			jd_tz;
 	short			jd_dow;
@@ -98,14 +97,8 @@ private:
 
 	bool			jd_verbose;
 
-	meananomaly			*ma;
-	equationofcentre	*eoc;
-
-
-
-	void	jd_calculateJulianDay(void);
-
-	std::string	jd_getDaySuffix(void);
+	//meananomaly			*ma;
+	//equationofcentre	*eoc;
 
 	//***********************************************************************************
 	//	Private, inline functions to calculate back and forth between radians and degrees
@@ -113,6 +106,13 @@ private:
 	double	RADIANS(double _degrees) { return (_degrees * M_PI / 180.); }
 	double	DEGREES(double _radians) { return (_radians * 180. / M_PI); }
 	//***********************************************************************************
+
+protected:
+	//	Precision formatters for terminal printing
+	short		jd_FLOATWIDTH, jd_FLOATPRECISION;
+
+	void		jd_calculateJulianDay(void);
+	std::string	jd_getDaySuffix(void);
 
 public:
 	julianday(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, bool _verbose);
@@ -124,7 +124,7 @@ public:
 	double	jd_getJulianDayNumber(void)	{ return jd_julianDayNumber; }
 	double	jd_getJulianDate(void)		{ return jd_julianDate; }
 
-	std::string	jd_getDOW(void)	{ return dow_name[long(jd_julianDay_utc + 1.5) % (7)]; }
+	std::string	jd_getDOW(void)	{ return dow_name[long(jd_julianDayNumber + 1.5) % (7)]; }
 	/*************************************************************************/
 
 	void	jd_printToScreen(void);
