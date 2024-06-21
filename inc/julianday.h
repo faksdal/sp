@@ -35,7 +35,7 @@ https://www.aa.quae.nl/en/reken/juliaansedag.html
 
 class julianday : public timestamp{
 
-private:
+protected:
 
 	/*
 	struct Π_ω_table{
@@ -81,6 +81,7 @@ private:
 	double			jd_julianDay_utc;
 	double			jd_j2000;
 
+	/*
 	double			M;						// The calculated mean anomaly
 	double			C;						// The calculated equation of centre
 	double			L;						// The calculated mean longitude
@@ -94,6 +95,7 @@ private:
 	double			H;						// Hour angle
 	double			A;						// Azimuth
 	double			h;						// Altitude
+	*/
 
 	bool			jd_verbose;
 

@@ -30,8 +30,6 @@ julianday::julianday(int _year, short _month, double _day, short _hour, short _m
 	jd_FLOATWIDTH		= 25;
 	jd_FLOATPRECISION	= 11;
 
-	M = 0.00;
-
 	//jd_calculateJulianDay();
 
 	//jd_printToScreen();

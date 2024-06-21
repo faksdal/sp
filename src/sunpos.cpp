@@ -24,33 +24,47 @@ sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute,
 	//*************************************************************************
 	// 2. The Mean anomaly; Calculate and retreive the mean anomaly M
 		ma_init(jd_getJulianDayNumber(), jd_getJ2000(), _verbose);
-		M = ma_getM(_planet);
+		M_deg = ma_getM(_planet);
 	//*************************************************************************
 
 
 
 	//*************************************************************************
 	// 3. The equation of center
-		eoc_init(M, _verbose);
-		C = eoc_getC(planet);
+
+		eoc_init(M_deg, _verbose);
+		C_deg = eoc_getC(planet);
+
 	//*************************************************************************
 
 
 
 	//*************************************************************************
 	// 4. The Perihelion and the Obliquity of the Ecliptic
+
+		ecliptic_longitude_Π_deg	= el_getPI(planet);
+		obliquity_of_equator_ε_deg	= ooe_getEpsilon(planet);
+
 	//*************************************************************************
 
 
 
 	//*************************************************************************
 	// 5. The Ecliptical Coordinates
+
+		mean_longitude_L_deg		= M_deg + ecliptic_longitude_Π_deg  + 180;
+		ecliptical_longitude_λ_deg	= mean_longitude_L_deg + C_deg;
+
 	//*************************************************************************
 
 
 
 	//*************************************************************************
 	// 6. The Equatorial coordinates
+
+		right_ascension_α_deg	= DEGREES(atan2( sin(RADIANS(ecliptical_longitude_λ_deg)) * cos(RADIANS(obliquity_of_equator_ε_deg)), cos(RADIANS(ecliptical_longitude_λ_deg))));
+		declination_δ_deg		= DEGREES(asin( sin(RADIANS(ecliptical_longitude_λ_deg)) *  sin(RADIANS(obliquity_of_equator_ε_deg))));
+
 	//*************************************************************************
 
 

@@ -11,6 +11,9 @@
 /*
  *
  */
+#ifndef NUMBEROFPLANETS
+#define	NUMBEROFPLANETS	9
+#endif
 
 #include <math.h>
 #include <iostream>
@@ -18,18 +21,24 @@
 #include "julianday.h"
 #include "meananomaly.h"
 #include "equationofcentre.h"
-
-#ifndef NUMBEROFPLANETS
-#define	NUMBEROFPLANETS	9
-#endif
+#include "eclipticlongitude.h"
+#include "obliquityofequator.h"
 
 
 
-class sunpos : public julianday, public meananomaly, public equationofcentre
+class sunpos : public julianday, public meananomaly, public equationofcentre, public eclipticlongitude, public obliquityofequator
 {
 	std::string	planet;
 
-	double		M, C;
+	double		M_deg;
+	double		C_deg;
+	double		ecliptic_longitude_Π_deg;
+	double		obliquity_of_equator_ε_deg;
+	double		mean_longitude_L_deg;
+	double		ecliptical_longitude_λ_deg;
+	double		right_ascension_α_deg;
+	double		declination_δ_deg;
+
 
 	//***********************************************************************************
 	//	Private, inline functions to calculate back and forth between radians and degrees

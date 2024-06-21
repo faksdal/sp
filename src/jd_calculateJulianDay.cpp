@@ -65,14 +65,18 @@ void julianday::jd_calculateJulianDay(void)
 	//	We calculate first the value for JD at noon
 	//std::cout << "jd_julianDay: " << jd_julianDay << std::endl;
 	//std::cout << "(short)ts_getDay(): " << (short)ts_getDay() << std::endl;
-	jd_julianDayNumber	=	floor(365.25 * (Y + 4716.))
-						+	floor(30.6001 * (M + 1.))
-						+	(short)ts_getDay() + B - 1524;
+	//jd_julianDayNumber	=	floor(365.25 * (Y + 4716.))
+	//					+	floor(30.6001 * (M + 1.))
+	//					+	(short)ts_getDay() + B - 1524;
 	//std::cout << "jd_julianDay: " << jd_julianDay << std::endl;
 
 	//	Then we add the fraction of the day
 	//jd_julianDayFraction = jd_julianDay + ((ts_getHour() + (ts_getMinute()/60.) + (ts_getSecond()/3600.))/24.);
-	jd_julianDate = jd_julianDayNumber + ((ts_getHour() - jd_getTz() + (ts_getMinute()/60.) + (ts_getSecond()/3600.))/24.);
+	jd_julianDate		=		floor(365.25 * (Y + 4716.))
+							+	floor(30.6001 * (M + 1.))
+							+	(short)ts_getDay() + B - 1524.5 + ((ts_getHour() - jd_getTz() + (ts_getMinute()/60.) + (ts_getSecond()/3600.))/24.);
+
+	jd_julianDayNumber	=	floor(jd_julianDate);
 
 	// Calculate doy
 	short K;

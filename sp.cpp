@@ -51,6 +51,8 @@ int main(int argc, char *argv[])
 	bool	timeSupplied	= false;
 	bool	verbose			= false;
 
+	std::string	planet = "Earth";
+
 	//
 	//	getopt variables
 	//
@@ -58,11 +60,12 @@ int main(int argc, char *argv[])
 
 
 	//	TODO Add proper switches as the projects goes along
-	char	*shortOptions = (char*)"d:t:vh";
+	char	*shortOptions = (char*)"d:p:t:vh";
 	struct option	longOptions[] = {
 
 					{"date",	required_argument,	NULL,	'd'},
 					{"time",	required_argument,	NULL,	't'},
+					{"planet",	required_argument,	NULL,	'p'},
 					{"verbose",	no_argument,		NULL,	'v'},
 					{"help",	no_argument,		NULL,	'h'},
 					{"tz",		required_argument,	NULL,	1},
@@ -107,6 +110,10 @@ int main(int argc, char *argv[])
 
 							break;
 						}
+			case 'p':	{
+							planet = optarg;
+							break;
+						}
 			case 't':	{
 							hour = atoi(optarg);
 							parseOptarg(&optarg);
@@ -134,7 +141,9 @@ int main(int argc, char *argv[])
 	timeSupplied ? printTime(hour, minute, second)	: getSystemTime(hour, minute, second, verbose);
 
 
-	sunpos * sp = new sunpos(year, month, day, hour, minute, second, tz, verbose, "Earth");
+	//std::string planet = "Earth";
+
+	sunpos * sp = new sunpos(year, month, day, hour, minute, second, tz, verbose, planet);
 
 	sp->sp_printToScreen();
 
