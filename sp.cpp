@@ -47,6 +47,9 @@ int main(int argc, char *argv[])
 	float	day;
 	float	second;
 
+	double	lat = 64.6806799;
+	double	lon	= 11.2914454;
+
 	bool	dateSupplied	= false;
 	bool	timeSupplied	= false;
 	bool	verbose			= false;
@@ -70,8 +73,8 @@ int main(int argc, char *argv[])
 					{"help",	no_argument,		NULL,	'h'},
 					{"tz",		required_argument,	NULL,	1},
 					//{"dow",		no_argument,		NULL,	'd'},
-					//{"lat",		required_argument,	NULL,	2},
-					//{"lon",		required_argument,	NULL,	3},
+					{"lat",		required_argument,	NULL,	2},
+					{"lon",		required_argument,	NULL,	3},
 					//{"dst",		required_argument,	NULL,	4},
 					//
 					{0, 0, 0, 0}
@@ -88,6 +91,14 @@ int main(int argc, char *argv[])
 		switch(c){
 			case 1:		{
 							tz = atoi(optarg);
+							break;
+						}
+			case 2:		{
+							lat = atof(optarg);
+							break;
+						}
+			case 3:		{
+							lon = atof(optarg);
 							break;
 						}
 			case 'v':	{
@@ -143,7 +154,7 @@ int main(int argc, char *argv[])
 
 	//std::string planet = "Earth";
 
-	sunpos * sp = new sunpos(year, month, day, hour, minute, second, tz, verbose, planet);
+	sunpos * sp = new sunpos(year, month, day, hour, minute, second, tz, verbose, planet, lat, lon);
 
 	sp->sp_printToScreen();
 

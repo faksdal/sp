@@ -23,12 +23,15 @@
 #include "equationofcentre.h"
 #include "eclipticlongitude.h"
 #include "obliquityofequator.h"
+#include "siderealtime.h"
 
 
 
-class sunpos : public julianday, public meananomaly, public equationofcentre, public eclipticlongitude, public obliquityofequator
+class sunpos : public julianday, public meananomaly, public equationofcentre, public eclipticlongitude, public obliquityofequator, public siderealtime
 {
 	std::string	planet;
+
+	double		lat, lon;
 
 	double		M_deg;
 	double		C_deg;
@@ -38,6 +41,10 @@ class sunpos : public julianday, public meananomaly, public equationofcentre, pu
 	double		ecliptical_longitude_λ_deg;
 	double		right_ascension_α_deg;
 	double		declination_δ_deg;
+	double		siderealtime_Θ_deg;
+	double		altitude_h_deg;
+	double		azimuth_A_deg;
+	double		hour_angle_H_deg;
 
 
 	//***********************************************************************************
@@ -48,7 +55,7 @@ class sunpos : public julianday, public meananomaly, public equationofcentre, pu
 	//***********************************************************************************
 
 public:
-	sunpos(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, bool _verbose, std::string _planet);
+	sunpos(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, bool _verbose, std::string _planet, double _lat, double _lon);
 	virtual ~sunpos();
 
 	void	sp_printToScreen(void);
