@@ -47,11 +47,11 @@ int main(int argc, char *argv[])
 	float	day;
 	float	second;
 
-	//double	lat = 64.6806799;	// oppi Leite
-	//double	lon	= 11.2914454;	// oppi Leite
+	double	lat = 64.6806799;	// oppi Leite
+	double	lon	= -11.2914454;	// oppi Leite
 
-	double	lat = 78.916663;	// Ny-Ålesund
-	double	lon	= 11.9333296;	// Ny-Ålesund
+	//double	lat = 78.916663;	// Ny-Ålesund
+	//double	lon	= 11.9333296;	// Ny-Ålesund
 
 	bool	dateSupplied	= false;
 	bool	timeSupplied	= false;

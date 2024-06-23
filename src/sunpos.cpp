@@ -66,8 +66,14 @@ sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute,
 	//*************************************************************************
 	// 6. The Equatorial coordinates
 
+		// Declination δ = sin β cos ε + cos β sin ε sin λ
+		// β (beta)
+		// ε (epsilon)
+		// λ (lamda)
+
 		right_ascension_α_deg	= DEGREES(atan2( sin(RADIANS(ecliptical_longitude_λ_deg)) * cos(RADIANS(obliquity_of_equator_ε_deg)), cos(RADIANS(ecliptical_longitude_λ_deg))));
 		declination_δ_deg		= DEGREES(asin( sin(RADIANS(ecliptical_longitude_λ_deg)) *  sin(RADIANS(obliquity_of_equator_ε_deg))));
+		                          //DEGREES(asin(sin(RADIANS(aSunObliquityCorrection))     *  sin(RADIANS(aSunApparentLongitude))));
 
 	//*************************************************************************
 
@@ -86,12 +92,6 @@ sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute,
 		hour_angle_H_deg	= siderealtime_Θ_deg - right_ascension_α_deg;
 		azimuth_A_deg		= DEGREES( atan2( sin(RADIANS(hour_angle_H_deg)), cos(RADIANS(hour_angle_H_deg)) * sin(RADIANS(lat)) - tan(RADIANS(declination_δ_deg)) * cos(RADIANS(lat)) ));
 		altitude_h_deg		= DEGREES( asin( sin(RADIANS(lat)) * sin(RADIANS(declination_δ_deg)) + cos(RADIANS(lat)) * cos(RADIANS(declination_δ_deg)) * cos(RADIANS(hour_angle_H_deg))));
-
-		//altitude_h_deg = asin( sin(RADIANS(φ)) * sin(δ) + cos(RADIANS(φ)) * cos(δ) * cos(RADIANS(H)) );
-
-		//double		altitude_h_deg;
-		//double		azimuth_A_deg;
-		//double		hour_angle_H_deg;
 
 	//*************************************************************************
 

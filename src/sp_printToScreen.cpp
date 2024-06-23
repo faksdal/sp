@@ -34,17 +34,22 @@ void sunpos::sp_printToScreen(void)
 	std::cout << "                                DOY: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << jd_doy << std::endl << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "                Mean anomaly M for " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << M_deg << "°" << std::endl;
-	std::cout << "          Equation of centre C for " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << C_deg << "°" << std::endl;
-	std::cout << "          Ecliptic longitude Π for " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << ecliptic_longitude_Π_deg << "°" << std::endl;
-	std::cout << "        Obliquity of equator ε for " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << obliquity_of_equator_ε_deg << "°" << std::endl;
-	std::cout << "              Mean longitude L for " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << fmod(mean_longitude_L_deg, 360) << "°" << std::endl;
-	std::cout << "        Ecliptical longitude λ for " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << fmod(ecliptical_longitude_λ_deg, 360) << "°" << std::endl;
-	std::cout << " Sun's right ascension α seen from " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << right_ascension_α_deg << "°" << std::endl;
-	std::cout << "         Sidereal time Θ seen from " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << siderealtime_Θ_deg << "°" << std::endl;
-	std::cout << "                  Hour angle H for " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << hour_angle_H_deg << "°" << std::endl;
-	std::cout << "                     Azimuth A for " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << azimuth_A_deg << "°" << std::endl;
-	std::cout << "                    Altitude h for " << planet << ": " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << altitude_h_deg << "°" << std::endl;
+	std::cout << " North and west are positive, south and east negative. " << std::endl;
+	std::cout << " Sun parameters for lat/lon " << lat << "°/" << lon << "° as seen from " << planet << std::endl << std::endl;
+
+	std::cout << "                Mean anomaly M: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << M_deg << "°" << std::endl;
+	std::cout << "          Equation of centre C: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << C_deg << "°" << std::endl;
+	std::cout << "          Ecliptic longitude Π: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << ecliptic_longitude_Π_deg << "°" << std::endl;
+	std::cout << "        Obliquity of equator ε: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << obliquity_of_equator_ε_deg << "°" << std::endl;
+	std::cout << "              Mean longitude L: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << fmod(mean_longitude_L_deg, 360) << "°" << std::endl;
+	std::cout << "        Ecliptical longitude λ: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << fmod(ecliptical_longitude_λ_deg, 360) << "°" << std::endl;
+	std::cout << "       Sun's right ascension α: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << right_ascension_α_deg << "°" << std::endl;
+	std::cout << "           Sun's declination δ: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << declination_δ_deg << "°" << std::endl;
+
+	std::cout << "               Sidereal time Θ: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << siderealtime_Θ_deg << "°" << std::endl;
+	std::cout << "                  Hour angle H: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << hour_angle_H_deg << "°" << std::endl;
+	std::cout << "                     Azimuth A: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << azimuth_A_deg << "°" << std::endl;
+	std::cout << "                    Altitude h: " << std::setw(jd_FLOATWIDTH) << std::setprecision(jd_FLOATPRECISION) << std::setfill(' ') << altitude_h_deg << "°" << std::endl;
 
 	//double		altitude_h_deg;
 	//double		azimuth_A_deg;
