@@ -24,10 +24,11 @@
 #include "eclipticlongitude.h"
 #include "obliquityofequator.h"
 #include "siderealtime.h"
+#include "equatorialcoefficients.h"
 
 
 
-class sunpos : public julianday, public meananomaly, public equationofcentre, public eclipticlongitude, public obliquityofequator, public siderealtime
+class sunpos : public julianday, public meananomaly, public equationofcentre, public eclipticlongitude, public obliquityofequator, public siderealtime, public equatorialcoefficients
 {
 	std::string	planet;
 

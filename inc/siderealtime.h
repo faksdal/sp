@@ -41,6 +41,8 @@ public:
 	void	sr_init(double _jd, double _j2000, bool _verbose, double _lon);
 
 	double	sr_getTheta(std::string _planet);
+	double	sr_getTheta0(std::string _planet);
+	double	sr_getTheta1(std::string _planet);
 
 };
 

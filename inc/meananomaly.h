@@ -81,6 +81,8 @@ public:
 	void	ma_init(double _jd, double _j2000, bool _verbose);
 
 	double	ma_getM(std::string _planet);
+	double	ma_getM0(std::string _planet);
+	double	ma_getM1(std::string _planet);
 };
 
 #endif /* INC_MEANANOMALY_H_ */

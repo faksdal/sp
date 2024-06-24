@@ -161,7 +161,6 @@ int main(int argc, char *argv[])
 
 	sp->sp_printToScreen();
 
-
 	if(sp)
 		delete sp;
 

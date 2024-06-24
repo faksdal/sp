@@ -70,7 +70,7 @@ protected:
 											// You get the Julian Day Number if you round a Julian Date (JD) down to the nearest whole value.
 											// https://www.aa.quae.nl/cgi-bin/glossary.cgi?l=en&o=Julian%20Day%20Number
 
-	double			jd_julianDate;			// The Julian Date (JD) counts the number of days since 12:00 UTC or 12:00 TAI on January
+	double			jd_julianDate;			// The Julian Date (J) counts the number of days since 12:00 UTC or 12:00 TAI on January
 											// 1st, −4712 on the Julian proleptic calendar. Don't confuse a Julian Date (which consists of
 											// a single number) with a date on the Julian calendar (which consists of three parts:
 											// a year, a month, and a day). Julian Dates can have fractional parts. JD 2451545.25 indicates

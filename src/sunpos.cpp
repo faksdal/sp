@@ -10,6 +10,8 @@
 #include "sunpos.h"
 #include "meananomaly.h"
 
+
+
 sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, bool _verbose, std::string _planet, double _lat, double _lon)
        : julianday(_year, _month, _day, _hour, _minute, _second, _tz,_verbose)
 
@@ -28,7 +30,7 @@ sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute,
 	//*************************************************************************
 	// 2. The Mean anomaly; Calculate and retreive the mean anomaly M
 		ma_init(jd_getJulianDayNumber(), jd_getJ2000(), _verbose);
-		M_deg = ma_getM(_planet);
+		M_deg = ma_getM(planet);
 	//*************************************************************************
 
 
@@ -99,6 +101,21 @@ sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute,
 
 	//*************************************************************************
 	// 8. Solar Transit
+
+		double J3 = round(360 / (sr_getTheta1(planet) - ma_getM1(planet)) );
+		std::cout << "J3: " << J3 << std::endl;
+
+		double J0 = fmod(((ma_getM0(planet) + ecliptic_longitude_Π_deg + 180 - sr_getTheta0(planet)) * (J3/360)), J3);
+		std::cout << "J0: " << J0 << std::endl;
+
+		double J1 = (eoc_getC1(planet) * (J3/360));
+		std::cout << "J1: " << J1 << std::endl;
+
+		double J2 = (ec_getA2(planet) * (J3/360));
+		std::cout << "J2: " << J2 << std::endl;
+
+		std::cout << std::endl;
+
 	//*************************************************************************
 
 
