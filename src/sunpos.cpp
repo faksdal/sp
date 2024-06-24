@@ -58,7 +58,7 @@ sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute,
 	//*************************************************************************
 	// 5. The Ecliptical Coordinates
 
-		mean_longitude_L_deg		= M_deg + ecliptic_longitude_Π_deg  + 180;
+		mean_longitude_L_deg		= fmod(M_deg + ecliptic_longitude_Π_deg  + 180, 360);
 		ecliptical_longitude_λ_deg	= mean_longitude_L_deg + C_deg;
 
 	//*************************************************************************
@@ -113,6 +113,28 @@ sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute,
 
 		double J2 = (ec_getA2(planet) * (J3/360));
 		std::cout << "J2: " << J2 << std::endl;
+
+		double Jtransit = fmod(jd_j2000 + J0 + (lon * (J3/360.)) + J1 * (sin(RADIANS(M_deg))) + J2 * (sin(RADIANS(2 * ecliptical_longitude_λ_deg))), J3);
+		std::cout << "Jtransit: " << Jtransit << std::endl;
+
+		double nx	= ((jd_julianDayNumber - jd_j2000 - J0) / J3) - lon/360;
+		double n	= round(nx);
+		std::cout << "nx/n: " << nx << "/" << n << std::endl;
+
+		double Jx	= jd_julianDayNumber + J3 * (n - nx);
+		std::cout << "Jx: " << Jx << std::endl;
+
+		std::cout << "M_deg: " << M_deg << std::endl;
+		ma_init(Jx, jd_getJ2000(), _verbose);
+		M_deg = ma_getM(planet);
+		std::cout << "M_deg: " << M_deg << std::endl;
+
+		std::cout << "mean_longitude_L_deg: " << mean_longitude_L_deg << std::endl;
+		mean_longitude_L_deg = fmod(M_deg + ecliptic_longitude_Π_deg + 180, 360);
+		std::cout << "mean_longitude_L_deg: " << mean_longitude_L_deg << std::endl;
+
+		Jtransit = (Jx + J0 + (lon * (J3/360.)) + J1 * (sin(RADIANS(M_deg))) + J2 * (sin(RADIANS(2 * ecliptical_longitude_λ_deg)))) ;
+		std::cout << "Jtransit: " << Jtransit << std::endl;
 
 		std::cout << std::endl;
 
