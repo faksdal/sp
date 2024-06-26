@@ -56,7 +56,7 @@ class sunpos : public julianday, public meananomaly, public equationofcentre, pu
 	//***********************************************************************************
 
 public:
-	sunpos(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, bool _verbose, std::string _planet, double _lat, double _lon);
+	sunpos(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, short _dst, bool _verbose, std::string _planet, double _lat, double _lon);
 	virtual ~sunpos();
 
 	void	sp_printToScreen(void);

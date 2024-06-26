@@ -61,6 +61,7 @@ protected:
 
 
 	short			jd_tz;
+	short			jd_dst;
 	short			jd_dow;
 
 	int				jd_doy;					// day number of the year, starting with #1 on 1st of January
@@ -117,7 +118,7 @@ protected:
 	std::string	jd_getDaySuffix(void);
 
 public:
-	julianday(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, bool _verbose);
+	julianday(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, short _dst, bool _verbose);
 
 	/*************************************************************************/
 	short jd_getTz(void)		{ return jd_tz; }

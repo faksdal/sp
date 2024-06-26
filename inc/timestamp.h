@@ -13,7 +13,7 @@ class timestamp{
 
 	int				ts_year;
 
-	short			ts_month, ts_hour, ts_minute;
+	short			ts_month, ts_hour, ts_minute, ts_tz, ts_dst;
 
 	double			ts_day, ts_second;
 
@@ -35,7 +35,7 @@ protected:
 public:
 
 	timestamp(void);
-	timestamp(int _year, short _month, double _day, short _hour, short _minute, double _second, bool _verbose);
+	timestamp(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, short _dst, bool _verbose);
 
 	/*************************************************************************/
 	int		ts_getYear(void)			{return ts_year;}

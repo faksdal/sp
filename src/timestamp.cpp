@@ -9,16 +9,18 @@
 
 
 
-timestamp::timestamp(int _year, short _month, double _day, short _hour, short _minute, double _second, bool _verbose)
+timestamp::timestamp(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, short _dst, bool _verbose)
 {
 	ts_validDate = true;
 
 	ts_year 	= _year;
 	ts_month	= _month;
-	ts_hour		= _hour;
+	ts_hour		= _hour - _tz - _dst;
 	ts_minute	= _minute;
 	ts_day		= _day;
 	ts_second	= _second;
+	ts_tz		= _tz;
+	ts_dst		= _dst;
 	ts_verbose	= _verbose;
 
 	/*

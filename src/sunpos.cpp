@@ -12,8 +12,8 @@
 
 
 
-sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, bool _verbose, std::string _planet, double _lat, double _lon)
-       : julianday(_year, _month, _day, _hour, _minute, _second, _tz,_verbose)
+sunpos::sunpos(int _year, short _month, double _day, short _hour, short _minute, double _second, short _tz, short _dst, bool _verbose, std::string _planet, double _lat, double _lon)
+       : julianday(_year, _month, _day, _hour, _minute, _second, _tz, _dst, _verbose)
 
 {
 	planet	= _planet;

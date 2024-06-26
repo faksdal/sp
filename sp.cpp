@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
 	short	hour;
 	short	minute;
 	short	tz;
+	short	dst;
 
 	float	day;
 	float	second;
@@ -78,12 +79,13 @@ int main(int argc, char *argv[])
 					//{"dow",		no_argument,		NULL,	'd'},
 					{"lat",		required_argument,	NULL,	2},
 					{"lon",		required_argument,	NULL,	3},
-					//{"dst",		required_argument,	NULL,	4},
+					{"dst",		required_argument,	NULL,	4},
 					//
 					{0, 0, 0, 0}
 	};	//End of getopt()-variables
 
-	tz = 0;
+	tz	= 0;
+	dst	= 0;
 
 	//
 	//	getopt() switch statement
@@ -102,6 +104,10 @@ int main(int argc, char *argv[])
 						}
 			case 3:		{
 							lon = atof(optarg);
+							break;
+						}
+			case 4:		{
+							dst = atoi(optarg);
 							break;
 						}
 			case 'v':	{
@@ -157,7 +163,7 @@ int main(int argc, char *argv[])
 
 	//std::string planet = "Earth";
 
-	sunpos * sp = new sunpos(year, month, day, hour, minute, second, tz, verbose, planet, lat, lon);
+	sunpos * sp = new sunpos(year, month, day, hour, minute, second, tz, dst, verbose, planet, lat, lon);
 
 	sp->sp_printToScreen();
 
